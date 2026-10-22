@@ -1,0 +1,14 @@
+name: audit-smoke
+
+on:
+  push:
+
+jobs:
+  smoke-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code (pinned, no floating refs)
+        uses: actions/checkout@v7.0.1
+
+      - name: Emit smoke audit marker
+        run: echo "SMOKE-AUDIT-OK"
